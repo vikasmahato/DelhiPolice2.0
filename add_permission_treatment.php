@@ -1,0 +1,33 @@
+<?php
+session_start();
+error_reporting(E_ALL); ini_set('display_errors', 1);
+include("includes/dbcon.php");
+
+$rank = $_POST['rank'];
+$appName = $_POST['applicantName'];
+$policestationNo = $_POST['idNo']; //belt Number
+$pis = $_POST['pis'];
+$relation = $_POST['relation'];
+$startDate = $_POST['startDate'];
+$hospitalName = $_POST['hospitalName'];
+$hospitalName = $_POST['refHospitalName'];
+$hospitalAddress = $_POST['hospitalAddress'];
+
+$diaryNo = $_POST['diaryNo'];
+$diaryDate = $_POST['diaryDate'];
+$appCGHSno = $_POST['appCGHSno'];
+$appCGHSexp = $_POST['appCGHSexp'];
+$refCGHSno = $_POST['refCGHSno'];
+$refCGHSexp = $_POST['refCGHSexp'];
+$appCGHScategory = $_POST['appCGHScategory'];
+$claim_type = "Permission Treatment";
+
+$sql = "INSERT INTO form (application_date, applicant_name, pis, rank, relation, startdate, hospital_name, refHospitalName, hospital_address, police_station_no, diary_no, a_cghs_no, a_cghs_exp, r_cghs_no, r_cghs_exp, a_cghs_category, diary_date, claim_type, status ) 
+
+VALUES (CURDATE(), '$appName', '$pis', '$rank', '$relation', '$startDate', '$hospitalName', '$refHospitalName', '$hospitalAddress', '$policestationNo', '$diaryNo',$appCGHSno,'$appCGHSexp',$refCGHSno,'$refCGHSexp','$appCGHScategory', '$diaryDate','PERMISSION', 'HAG')";
+
+//echo $sql; 
+mysqli_query($con, $sql);
+//header('location: dashboard.php');
+
+?>
