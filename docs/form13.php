@@ -1,7 +1,7 @@
 <?php 
 $string1 = "";
 $string2 = "$value[a_cghs_no]";
-if($value[relation]!="own"){
+if($value['relation']!="own"){
     $string1 = "$value[relation] of";
     $string2 = "$value[r_cghs_no]";
 }

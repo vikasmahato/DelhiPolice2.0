@@ -77,7 +77,8 @@ $item = explode(",",$result['items']);
         	</div>
 		    </div>
 		  </div>
-          
+          <form action="createpdf.php" method="post">
+              <input type="hidden"  value="<?php echo $result['app_id']; ?>" name="id"></input>
           <?php switch($result['claim_type']){
             //permission treatment
             case 'PERMISSION': ?>
@@ -106,7 +107,7 @@ $item = explode(",",$result['items']);
             break;
             }
           ?>
-
+          </form>
 		  <div class="col-md-6">
 		  	<?php
 		  	if($result['status'] == 0) {
