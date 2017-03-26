@@ -1,6 +1,6 @@
 <?php
 $string = "$value[relation]";
-if($value[relation]=="own"){
+if($value['relation']=="own"){
     $string = "self";
 }
 $form12 = "<html lang='en'>

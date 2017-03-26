@@ -1,7 +1,7 @@
 <?php
 $patient_name ="";
 $rel_string="";
-if($value[r_cghs_no]!=0)
+if($value['r_cghs_no']!=0)
 {
     $patient_name="____________________________";
     $rel_string="$value[relation]";

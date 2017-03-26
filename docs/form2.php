@@ -1,6 +1,6 @@
 <?php
 $string ="";
-if($value[r_cghs_no]==0)
+if($value['r_cghs_no']==0)
 {
     $string="the claimant is a CGHS beneficiary having token card No.<b> $value[a_cghs_no]</b> ";
 }
