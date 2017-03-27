@@ -95,8 +95,8 @@
                 </div>
                   
                       <div class="form-group">
-                  <label for="refHospitalname">Want Treatment at</label>
-                 <input type="text" class="form-control" id="basic-url" name="refHospitalname" placeholder="Referred Hospital Name" required >
+                  <label for="refHospitalName">Want Treatment at</label>
+                 <input type="text" class="form-control" id="basic-url" name="refHospitalName" placeholder="Referred Hospital Name" required >
                 </div>
                   
                       <div class="form-group">
