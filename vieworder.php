@@ -83,26 +83,29 @@ $item = explode(",",$result['items']);
             //permission treatment
             case 'PERMISSION': ?>
                 <div class='col-md-3'><button type='submit' class='btn btn-info' name='form12_btn'>Notesheet</button></div>
-                <div class='col-md-3'><button type='submit' class='btn btn-info'name='form13_btn'>Permission</button></div>
+        <div class='col-md-3'><button type='submit' class='btn btn-info'name='form13_btn'>Permission</button></div>
           <?php 
             break; //permision credit
             case 'CREDIT': ?>
                 <div class='col-md-3'><button type='submit' class='btn btn-info' name='form10_btn'>Notesheet</button></div>
-                <div class='col-md-3'><button type='submit' class='btn btn-info'name='form1_btn'>Permission</button></div>
+        <div class='col-md-3'><button type='submit' class='btn btn-info'name='form22_btn'>Permission</button></div>
           <?php
             break;
             case 'OP_EMERGENCY': ?>
-                <div class='col-md-3'><button type='submit' class='btn btn-info' name='form7_btn'>Permission</button></div>
-                <div class='col-md-3'><button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button></div>
-                <div class='col-md-3'><button type='submit' class='btn btn-info'name='form9_btn'>Order</button></div>
+                <div class='col-md-3'><button type='submit' class='btn btn-info' name='form7_btn'>Forwarding Letter</button></div>
+        <div class='col-md-3'><button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button>
+        </div>
           <?php
             break; 
             case 'OP_REFERRAL': ?>
-                <div class='col-md-3'><button type='submit' class='btn btn-info' name='form2_btn'>Permission</button></div>
-                <div class='col-md-3'><button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button></div>
+                <div class='col-md-3'><button type='submit' class='btn btn-info' name='form2_btn'>Notesheet</button></div>
+        <div class='col-md-3'><button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button></div>
+        <div class='col-md-3'><button type='submit' class='btn btn-info'name='form15_btn'>Order</button></div>
           <?php
             break;
-            case 'IP_REFERRAL': ?>
+            case 'IP_EMERGENCY': ?>
+          <div class='col-md-3'><button type='submit' class='btn btn-info' name='form3_btn'>Forwarding Letter</button></div>
+       <div class='col-md-3'><button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button> </div>
           <?php
             break;
             }

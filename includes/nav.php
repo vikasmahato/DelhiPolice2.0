@@ -31,6 +31,11 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+           <li class="treeview <?php if($currentPage =='register' ){echo 'active';}?>">
+          <a href="register.php">
+            <i class="fa fa-dashboard"></i> <span>Register</span>
+          </a>
+        </li>
             <li class="treeview <?php if($currentPage =='referral' ){echo 'active';}?>">
           <a href="referral.php">
             <i class="fa fa-dashboard"></i> <span>Referral/Govt. Claim</span>

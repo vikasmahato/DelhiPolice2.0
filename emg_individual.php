@@ -133,7 +133,7 @@
                   
                       <div class="form-group">
                   <label for="hospitalAddress">Enter the CGHS No of Dependent</label>
-               <input type="text" class="form-control" id="basic-url" name="hospitalAddress" placeholder="Address" required >
+               <input type="text" class="form-control" id="basic-url" name="refCGHSno" placeholder="Dependent CGHS No" required >
                 </div>
                   
                     <div class="form-group">
