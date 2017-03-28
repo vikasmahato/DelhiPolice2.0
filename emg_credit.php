@@ -75,7 +75,7 @@
            </div>
                 </div>
                 
-                   <div class="form-group">
+                   <div class="form-group" id="dependent1">
                   <label for="relation">Enter relation with the CGHS holder</label>
                  <input type="text" class="form-control" id="basic-url" name="relation" placeholder="Relation" >
                 </div>
@@ -131,23 +131,23 @@
                 </div>
                 </div>
                   
-                      <div class="form-group">
+                      <div class="form-group" id="dependent2">
                   <label for="hospitalAddress">Enter the CGHS No of Dependent</label>
-               <input type="text" class="form-control" id="basic-url" name="refCGHSno" placeholder="CGHS No" required >
+               <input type="text" class="form-control" id="basic-url" name="refCGHSno" placeholder="CGHS No">
                 </div>
                   
-                    <div class="form-group">
+                    <div class="form-group" id="dependent3">
                   <label for="refCGHSexp">Enter the expiry date of CGHS card of Dependent</label>
                   <div class="input-group date">
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" name="refCGHSexp" class="form-control pull-right" id="datepicker" required>
+                  <input type="text" name="refCGHSexp" class="form-control pull-right" id="datepicker">
                 </div>
                 </div>
                     
                   
-                      <div class="form-group">
+                      <div class="form-group" id="dependent4">
                  <span class="input-group-addon" id="basic-addon3">Dependent Certificate:</span>
             <div id="radioOptions">
               <div class="form-check">
