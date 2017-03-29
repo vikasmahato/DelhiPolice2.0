@@ -15,6 +15,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="dist/js/dependent.js"></script>
 <script>
   $(function () {
     $('.select2').select2();
