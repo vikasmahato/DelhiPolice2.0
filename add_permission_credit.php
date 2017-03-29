@@ -28,7 +28,9 @@ $sql = "INSERT INTO form (application_date, applicant_name, pis, rank, relation,
 VALUES (CURDATE(), '$appName', '$pis', '$rank', '$relation', '$startDate', '$hospitalName', '$hospitalAddress', '$policestationNo', '$diaryNo',$appCGHSno,'$appCGHSexp',$refCGHSno,'$refCGHSexp','$appCGHScategory', '$diaryDate','CREDIT', 'HAG')";
 
 //echo $sql; 
-mysqli_query($con, $sql);
+if(mysqli_query($con, $sql)){
 header('location: dashboard.php');
-
+}else {
+    echo "Some error occurred";
+}
 ?>
