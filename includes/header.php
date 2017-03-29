@@ -48,6 +48,9 @@ $currentPage = $getpage[0];
       display: block;
       z-index: 1;
     }
+      #dependent1,#dependent2,#dependent3,#dependent4{
+          display: none;
+      }
 </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
