@@ -77,7 +77,7 @@
                 
                    <div class="form-group" id="dependent1">
                   <label for="relation">Enter relation with the CGHS holder</label>
-                 <input type="text" class="form-control" id="basic-url" name="relation" placeholder="Relation" >
+                 <input type="text" class="form-control" id="basic-url" name="relation" placeholder="Relation" value="self" >
                 </div>
                    <div class="form-group">
                   <label for="startDate">Enter the Referral Date</label>
@@ -131,7 +131,7 @@
                     
                       <div class="form-group" id="dependent2">
                   <label for="refCGHSno">Enter the CGHS No of Dependent</label>
-               <input type="text" class="form-control" id="basic-url" name="refCGHSno" placeholder="CGHS No">
+               <input type="text" class="form-control" id="basic-url" name="refCGHSno" placeholder="CGHS No" value="0000">
                 </div>
                   
                       <div class="form-group" id="dependent3">
@@ -140,7 +140,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" name="refCGHSexp" class="form-control pull-right" id="datepicker">
+                  <input type="text" name="refCGHSexp" class="form-control pull-right" id="datepicker" value="00-00-0000">
                 </div>
                 </div>
                   
