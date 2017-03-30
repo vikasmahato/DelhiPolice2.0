@@ -31,11 +31,15 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+          
            <li class="treeview <?php if($currentPage =='register' ){echo 'active';}?>">
           <a href="register.php">
             <i class="fa fa-dashboard"></i> <span>Register</span>
           </a>
         </li>
+          	<?php
+		  	if($_SESSION['name']=="dealinghand") {
+		  	?>
             <li class="treeview <?php if($currentPage =='referral' ){echo 'active';}?>">
           <a href="referral.php">
             <i class="fa fa-dashboard"></i> <span>Referral/Govt. Claim</span>
@@ -60,7 +64,10 @@
           <a href="permission_credit.php">
             <i class="fa fa-dashboard"></i> <span>Permission Credit</span>
           </a>
-        </li>     
+        </li>  
+          <?php
+            }
+		  	?>
       </ul>
     </section>
     <!-- /.sidebar -->

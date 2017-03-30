@@ -4,18 +4,38 @@
 
     <!-- Begin page content -->
     <div class="content-wrapper">
+           <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+       Calculation Sheet
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Application</a></li>
+        <li class="active">Calculation Sheet</li>
+      </ol>
+    </section>
+
+         <!-- Main content -->
+    <section class="content">
+        <div class="row">
+                <div class="box box-primary">
+            <div class="box-header with-border">
+            
         <form id="CalculationSheet" action="calcSheet.php" method="post">
-      	<div>
-      		 <div class="input-group">
-            <span class="input-group-addon" id="basic-addon3">Enter the category of CGHS Applicant:</span>
+      	      <div class="box-body">
+      		
+                     <div class="form-group">
+                  <label for="appCGHScategory">Category</label>
+                         
             <select class="custom-select" name="appCGHScategory" id="appCGHScategory" required >
                 <option value="" selected disabled>Please select</option>
                 <option value="General">General</option>
                 <option value="Private">Private</option>
                 <option value="Semi-Private">Semi-Private</option>
             </select>
-         </div>
-             <div class="input-group">
+                  </div>
+        
+          <!--   <div class="input-group">
             <span class="input-group-addon" id="basic-addon3">Hospital Type:</span>
             <div id="radioOptions">
               <div class="form-check">
@@ -31,10 +51,25 @@
                 </label>
               </div>
            </div>
-         </div>
-      		
-      	</div>
-      	<h2>&nbsp;</h2>
+         </div>-->
+                  
+                  <div class="form-group">
+                  <label for="claimCheck">Hospital Tpye</label>
+                  <div id="radioOptions">
+              <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="h_type" id="nabh_nabl" value="nabh_nabl">
+                    NABH
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="h_type" id="non_nabh_nabl" value="non_nabh_nabl">
+                    NON NABH
+                </label>
+              </div>
+           </div>
+                </div>
         
       	<div class='row'>
       		<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -89,8 +124,15 @@
 					</div>
 			     </div>
 				</form>
-      
-
+                
+                    </div>
+            </div>
+        </div>
+        </section>
+    <!-- /.content -->
+        
+      </div>
+<!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.0.0
@@ -98,8 +140,9 @@
     <strong>Copyright &copy; 2017 All rights
     reserved.
   </footer>
-      </div>
-        
+</div>
+
+     
     <script src="dist/js/jquery.min.js"></script>
     <script src="dist/js/jquery-ui.min.js"></script>
    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
