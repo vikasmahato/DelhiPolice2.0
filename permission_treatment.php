@@ -79,6 +79,12 @@
                   <label for="relation">Enter relation with the CGHS holder</label>
                  <input type="text" class="form-control" id="basic-url" name="relation" placeholder="Relation" value="self" >
                 </div>
+                  
+                  <div class="form-group" id="dependent5">
+                  <label for="relation">Enter relative name</label>
+                 <input type="text" class="form-control" id="basic-url" name="relativeName" placeholder="Relative Name" value="no name" >
+                </div>
+                  
                    <div class="form-group">
                   <label for="startDate">Enter the Referral Date</label>
                   <div class="input-group date">
@@ -104,8 +110,17 @@
                <input type="text" class="form-control" id="basic-url" name="hospitalAddress" placeholder="Address" required >
                 </div>
                   
+                  <div class="form-group">
+                  <label for="startDate">Enter Application Submission date:</label>
+                  <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" name="appDate" class="form-control pull-right" id="datepicker">
+                </div>
+                </div>
                       <div class="form-group">
-                  <span class="input-group-addon" id="basic-addon3">Enter Application Submission date:</span>
+                  <span class="input-group-addon" id="basic-addon3">Diary No:</span>
             <input type="text" class="form-control" id="diary" name="diaryNo" placeholder="Diary No" required >
             <span class="input-group-addon" id="dated">/Genl. Branch/SED dated</span>
             <input type="text" class="form-control" id="datepicker" name="diaryDate" required >

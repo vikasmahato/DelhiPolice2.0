@@ -80,6 +80,10 @@
                  <input type="text" class="form-control" id="basic-url" name="relation" placeholder="Relation" value="self" >
                 </div>
                  
+                  <div class="form-group" id="dependent5">
+                  <label for="relation">Enter relative name</label>
+                 <input type="text" class="form-control" id="basic-url" name="relativeName" placeholder="Relative Name" value="no name" >
+                </div>
                   
                    <div class="form-group">
                   <label for="startDate endDate">Period of Treatment</label>
