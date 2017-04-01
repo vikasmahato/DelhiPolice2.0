@@ -8,7 +8,7 @@ $(".addmore").on('click',function(){
 	html += '<td><input class="case" type="checkbox"/></td>';
 	html += '<td><input type="text" data-type="productCode" name="itemNo[]" id="itemNo_'+i+'" class="form-control autocomplete_txt" autocomplete="off"></td>';
     html += '<td><input type="text" data-type="hospName" name="itemHosp[]" id="itemHosp_'+i+'" class="form-control autocomplete_txt" autocomplete="off"></td>';
-    html += '<td><input type="date" data-type="date" name="itemDate[]" id="itemDate_'+i+'" class="form-control autocomplete_txt" autocomplete="off"></td>';
+    html += '<td><input type="text" data-type="text" name="itemDate[]" id="itemDate_'+i+'" class="form-control autocomplete_txt" autocomplete="off"></td>';
 	html += '<td><input type="text" data-type="productName" name="itemName[]" id="itemName_'+i+'" class="form-control autocomplete_txt" autocomplete="off"></td>';
     
     html += '<td><input type="number" step="any" name="total_asked[]" id="total_asked_'+i+'" class="form-control totalAskedPrice" autocomplete="off" onkeypress="return IsNumeric(event);" ondrop="return false;" onpaste="return false;"></td>';

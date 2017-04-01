@@ -1,5 +1,5 @@
 <?php
-require 'database-config.php';
+require 'includes/dbcon.php';
 
 $subtotal = round($_POST['subTotal']);
 
@@ -10,23 +10,11 @@ $itemHosp = $_POST['itemHosp'];
 $itemDate = $_POST['itemDate'];
 $totalAsked = $_POST['total_asked'] ;
 $sumTotalAsked = round($_POST['askedTotal']);
+$appid = $_POST['appId'];
 $arrlength = count($itemNo);
 
 
-
-
-
-try {
     
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    
-    $sql2 = "SELECT app_id FROM form ORDER BY app_id DESC LIMIT 1 ";
-    
-    $q = $dbh->query($sql2);
-    $q->setFetchMode(PDO::FETCH_ASSOC);
-    $row = $q->fetch();
-    $appid = $row['app_id'];
     
     if($subtotal > 200000)
     
@@ -34,7 +22,7 @@ $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     else
         $sql = "UPDATE form SET amt_granted = '$subtotal',amt_asked = '$sumTotalAsked',  status = 'HAG' WHERE app_id = '$appid' ";
     
-    $dbh->exec($sql);
+    mysqli_query($con, $sql);
     
     for($x = 0; $x < $arrlength; $x++) {
          
@@ -48,20 +36,14 @@ $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
          }
          $sql3 = "INSERT INTO medical (app_id, s_no, treatment, total, bill_no_hosp, date, amt_asked) VALUES ('$appid','$itemNo[$x]', '$itemName[$x]', '$totalGranted[$x]', '$itemHosp[$x]', '$itemDate[$x]','$totalAsked[$x]')";
         
-         $dbh->exec($sql3);
+         mysqli_query($con, $sql3);
     }
    
     
     
     echo "New record created successfully " ;
     
-    header ("Location: dealinghome2.php");
-    }
-catch(PDOException $e)
-    {
-    echo $sql . "<br>" . $e->getMessage();
-    }
+    header ("Location: vieworder.php?id=$appid");
 
-$conn = null;
 ?>
 
