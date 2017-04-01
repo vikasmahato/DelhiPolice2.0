@@ -114,9 +114,8 @@ $item = explode(",",$result['items']);
         
         <div class="col-md-6">
         
-          <?php if ($_SESSION['sess_userrole']!="dealinghand") : ?>
-    <div><h3>Approve?</h3></div>
-    <button type="button" class="btn btn-success btn-lg btn-block col-md-6" data-toggle="modal" data-target="#approveModal">Yes</button>
+          <?php if ($_SESSION['sess_userrole']!="dealinghand"){ ?>
+    <button type="button" class="btn btn-success btn-lg btn-block col-md-6" data-toggle="modal" data-target="#approveModal">Approve</button>
         <!-- Modal -->
 <div class="modal fade" id="approveModal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
@@ -160,7 +159,7 @@ $item = explode(",",$result['items']);
         </div>
     </div>
 </div>
-    <button type="button" class="btn btn-danger btn-lg btn-block " data-toggle="modal" data-target="#denyModal">No</button>
+    <button type="button" class="btn btn-warning btn-lg btn-block " data-toggle="modal" data-target="#denyModal">Re-Eval</button>
       <!-- Modal -->
 <div class="modal fade" id="denyModal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
@@ -204,9 +203,17 @@ $item = explode(",",$result['items']);
         </div>
     </div>
 </div>
-    <?php endif; ?>
-      
-      
+    <?php 
+      } else if(($_SESSION['sess_userrole']=="dealinghand")&&(($result['status']=="REEVAL_HAG")||($result['status']=="REEVAL_IADMIN")||($result['status']=="REEVAL_ACP")||($result['status']=="REEVAL_DCP"))){ 
+    ?>
+    <form class="form-horizontal" role="form" method="post" action="update.php">
+        <input name="appId" type="text" value="<?php echo $_GET['id'] ?>" class="hidden" />
+        <input name="revStatus" type="text" value="<?php echo $result['status'] ?>" class="hidden" />
+        <button type="submit" class="btn btn-success btn-lg btn-block col-md-6" name="reeval_approve">Approve</button>
+     </form> 
+    <?php
+      }
+    ?>
       
 		</div>
 
