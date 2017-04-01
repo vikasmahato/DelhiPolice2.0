@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION["sess_userrole"]!="iadmin"){
+    header ("Location: index.php");
+}
+?>
 <?php include ("includes/header.php");?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

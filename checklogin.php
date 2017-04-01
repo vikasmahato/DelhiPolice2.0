@@ -15,19 +15,19 @@ $count=mysqli_num_rows($result);
 if($count==1){
     $_SESSION['user_id']=$user_id;
     if($user_id=="dealinghand"){
-     $_SESSION['name']="dealinghand";
+     $_SESSION['sess_userrole']="dealinghand";
          header("Location: dashboard.php");
     }elseif($user_id=="acp"){
-     $_SESSION['name']="acp";
+     $_SESSION['sess_userrole']="acp";
          header("Location: dashboard_acp.php");
     }elseif($user_id=="hag"){
-     $_SESSION['name']="hag";
+     $_SESSION['sess_userrole']="hag";
          header("Location: dashboard_hag.php");
-    }elseif($user_id=="iadmin.com"){
-     $_SESSION['name']="iadmin";
+    }elseif($user_id=="iadmin"){
+     $_SESSION['sess_userrole']="iadmin";
          header("Location: dashboard_iadmin.php");
     }elseif($user_id=="admin"){
-     $_SESSION['name']="admin";
+     $_SESSION['sess_userrole']="admin";
          header("Location: dashboard_dcp.php");
     }
    

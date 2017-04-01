@@ -68,6 +68,11 @@
           <?php
             }
 		  	?>
+             <li class="treeview <?php if($currentPage =='logout' ){echo 'active';}?>">
+          <a href="logout.php">
+            <i class="fa fa-dashboard"></i> <span>Logout</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

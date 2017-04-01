@@ -111,18 +111,110 @@ $item = explode(",",$result['items']);
             }
           ?>
           </form>
-		  <div class="col-md-6">
-		  	<?php
-		  	if($result['status'] == 0) {
-		  	?>
-		  	<a href = "finishedsuccess.php?id=<?php $_GET['id']; ?>"><button type="button" class="btn btn-block btn-success btn-lg">Approve</button></a>
-		  	<?php } else { ?>
-		  	<button type="button" class="btn btn-block btn-success btn-lg disabled">Approve</button>
-		  	<?php } ?>
-		  </div>
+        
+        <div class="col-md-6">
+        
+          <?php if ($_SESSION['sess_userrole']!="dealinghand") : ?>
+    <div><h3>Approve?</h3></div>
+    <button type="button" class="btn btn-success btn-lg btn-block col-md-6" data-toggle="modal" data-target="#approveModal">Yes</button>
+        <!-- Modal -->
+<div class="modal fade" id="approveModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="approveModalLabel">
+                    Confirmation Details
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form class="form-horizontal" role="form" method="post" action="update.php">
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="orderNo">Comments:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="inputComment" name="inputComment" placeholder="Comment."/>
+                    </div>
+                  </div>
+                <input name="appId" type="text" value="<?php echo $_GET['id'] ?>" class="hidden" />
+                <input type="submit" name="approve_btn" id="submit-form"  />
+                </form>   
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    <button type="button" class="btn btn-danger btn-lg btn-block " data-toggle="modal" data-target="#denyModal">No</button>
+      <!-- Modal -->
+<div class="modal fade" id="denyModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="denyModalLabel">
+                    Are you sure to Send for Re evaluation.
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form class="form-horizontal" role="form" method="post" action="update.php">
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label"
+                              for="reason">Reason</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" 
+                        id="inputComment" name="reason" placeholder="Reason"/>
+                    </div>
+                  </div>
+                <input name="appId" type="number" value="<?php echo $_GET['id'] ?>" class="hidden" />
+                <input type="submit" id="submit-form" name="deny_btn" />
+                </form>   
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    <?php endif; ?>
+      
+      
+      
 		</div>
 
+		</div>
+  
+      
     </section>
+
     <!-- /.content -->
 
     <div class="clearfix"></div>
