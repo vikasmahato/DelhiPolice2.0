@@ -58,21 +58,21 @@
                 </div>
                
                 <div class="form-group">
-                  <label for="claimCheck">Treatment of Self or Relative:</label>
-                  <div id="radioOptions">
-              <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="claimCheck" id="radioCheck" value="self" onclick="hide()">
-                    SELF
-                </label>
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="claimCheck" id="radioCheck" value="relative" onclick="show()">
-                    RELATIVE
-                </label>
-              </div>
-           </div>
+                            <label for="claimCheck">Treatment of Self or Relative:</label>
+                            <div id="radioOptions">
+                        <div class="form-check">
+                          <label class="form-check-label">
+                              <input class="form-check-input" type="radio" name="claimCheck" id="radioCheck" value="self" onclick="hide()">
+                              SELF
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <label class="form-check-label">
+                              <input class="form-check-input" type="radio" name="claimCheck" id="radioCheck" value="relative" onclick="show()">
+                              RELATIVE
+                          </label>
+                        </div>
+                     </div>
                 </div>
                 
                    <div class="form-group" id="dependent1">
