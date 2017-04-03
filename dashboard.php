@@ -74,7 +74,7 @@
                   <td><?php echo $result['rank']." ".$result['applicant_name'] ?></td>
                      <td><?php echo $result['application_date'] ?></td>
                     <td><?php echo $result['claim_type'] ?></td>
-                <td><a class="btn btn-block btn-default" href="vieworder.php?id=<?php echo $result['app_id']; ?>"><i class="fa fa-eye"></i> View</a></td>
+                <td><a class="btn btn-block btn-default" href="viewclaim.php?id=<?php echo $result['app_id']; ?>"><i class="fa fa-eye"></i> View</a></td>
                 </tr>
                 <?php 
                 }

@@ -38,7 +38,7 @@
                   <td>ORDER#<?php echo $result['id'] ?></td>
                   <td><?php echo $result['name'] ?></td>
                   <td><?php echo $result['del_date'] ?></td>
-                  <td><a class="btn btn-block btn-default" href="vieworder.php?id=<?php echo $result['id']; ?>"><i class="fa fa-edit"></i> Edit</a></td>
+                  <td><a class="btn btn-block btn-default" href="viewclaim.php?id=<?php echo $result['id']; ?>"><i class="fa fa-edit"></i> Edit</a></td>
                 </tr>
                 <?php 
                 }

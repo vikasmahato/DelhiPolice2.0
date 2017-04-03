@@ -41,7 +41,7 @@
                   <td><?php echo $result['name'] ?></td>
                   <td><?php echo $result['del_date'] ?></td>
                   <td><a class="btn btn-block btn-default" href="editorder.php?id=<?php echo $result['id']; ?>"><i class="fa fa-edit"></i> Edit</a></td>
-                  <td><a class="btn btn-block btn-default" href="vieworder.php?id=<?php echo $result['id']; ?>"><i class="fa fa-eye"></i> View</a></td>
+                  <td><a class="btn btn-block btn-default" href="viewclaim.php?id=<?php echo $result['id']; ?>"><i class="fa fa-eye"></i> View</a></td>
                   <td><a class="btn btn-block btn-danger" href="deleteorder.php?id=<?php echo $result['id']; ?>"><i class="fa fa-trash"></i> Delete</a></td>
                 </tr>
                 <?php 
