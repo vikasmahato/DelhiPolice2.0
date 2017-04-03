@@ -4,7 +4,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       New Referral/Govt. Claim
+       New Register Entry
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -102,12 +102,12 @@
                   
                       <div class="form-group">
                   <label for="admis_amt">Admissible Amount</label>
-               <input type="number" class="form-control" id="basic-url" name="admis_amt" placeholder="Admissible Amount" required >
+               <input type="number" class="form-control" id="basic-url" name="admis_amt" placeholder="Admissible Amount" >
                 </div>
                   
                       <div class="form-group">
                   <label for="send_to">Send To</label>
-                   <select class="custom-select form-control" name="send_to" required >
+                   <select class="custom-select form-control" name="send_to" >
                          <option value="" selected disabled>Please select</option>
                          <option value="Account Br.">Account Br.</option>
                          <option value="PHQ">PHQ</option>
@@ -115,16 +115,16 @@
               
                 
                   <label for="number">Number</label>
-               <input type="number" class="form-control" id="basic-url" name="number" placeholder="Number" required >
+               <input type="number" class="form-control" id="basic-url" name="number" placeholder="Number">
             
                
                   <label for="date">Date</label>
-               <input type="date" class="form-control" id="datepicker" name="date" placeholder="Date" required >
+               <input type="text" class="form-control" id="datepicker" name="date" placeholder="Date">
                 </div>
                   
                      <div class="form-group">
                   <label for="sanction_no">Sanction No</label>
-               <input type="number" class="form-control" id="basic-url" name="sanction_no" placeholder="Sanction No" required >
+               <input type="number" class="form-control" id="basic-url" name="sanction_no" placeholder="Sanction No">
                 </div>
                   
                 

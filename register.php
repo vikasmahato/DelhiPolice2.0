@@ -11,17 +11,28 @@
         <li class="active">Register</li>
       </ol>
     </section>
-
     <!-- Main content -->
     <section class="content">
       <!-- Info boxes -->
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-red"><i class="ion ion-ios-plus"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Add New Register Entry</span>
+                 <a href="new_register.php" class="btn btn-sm btn-danger btn-flat pull-left">ADD</a>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
       <!-- /.row -->
       <!-- Main row -->
       <div class="row">
         <!-- Left col -->
-        <div>
+        <div class="col-md-12">
           <!-- TABLE: LATEST ORDERS -->
-          <div class="box box-info">
+          <div class="box box-danger">
             <div class="box-header with-border">
               <h3 class="box-title">Applications</h3>
             </div>
@@ -52,7 +63,7 @@
                   <td><?php echo $result['rank']." ".$result['applicantName']." No.".$result['idNo']; ?></td>
                      <td><?php echo $result['treatment_by'] ?></td>
                     <td><?php echo $result['type'] ?></td>
-                <td><a class="btn btn-block btn-default" href=""><i class="fa fa-eye"></i> View</a></td>
+                <td><a class="btn btn-block btn-default" href="viewregister.php?id=<?php echo $result['s_no']; ?>"><i class="fa fa-eye"></i> View</a></td>
                 </tr>
                 <?php 
                 }

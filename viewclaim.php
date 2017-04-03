@@ -2,7 +2,6 @@
 <?php 
 $sql = mysqli_query($con, "SELECT * FROM form WHERE app_id = '".$_GET['id']."'");
 $result = mysqli_fetch_array($sql);
-$item = explode(",",$result['items']);
 ?>
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -51,11 +50,6 @@ $item = explode(",",$result['items']);
 
         <div class="col-md-6">
           <div class="box box-default">
-            <div class="box-header with-border">
-	          <h3 class="box-title">
-	            Order Number <?php echo $_GET['id']; ?>
-	          </h3>
-        	</div>
         <!-- /.col -->
             <div class="box-body">
 	            <blockquote>
@@ -78,7 +72,7 @@ $item = explode(",",$result['items']);
 		    </div>
 		  </div>
           <form action="createpdf.php" method="post">
-              <input type="hidden"  value="<?php echo $result['app_id']; ?>" name="id"></input>
+              <input type="hidden"  value="<?php echo $result['app_id']; ?>" name="id" />
           <?php switch($result['claim_type']){
             //permission treatment
             case 'PERMISSION': ?>
@@ -217,8 +211,7 @@ $item = explode(",",$result['items']);
       
 		</div>
 
-		</div>
-  
+        </div>
       
     </section>
 

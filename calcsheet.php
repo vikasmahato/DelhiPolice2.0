@@ -43,7 +43,7 @@ $arrlength = count($itemNo);
     
     echo "New record created successfully " ;
     
-    header ("Location: vieworder.php?id=$appid");
+    header ("Location: viewclaim.php?id=$appid");
 
 ?>
 

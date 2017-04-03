@@ -78,12 +78,22 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+          <li class="treeview <?php if($currentPage =='register' ){echo 'active';}?>">
+          <a href="register.php">
+            <i class="fa fa-dashboard"></i> <span>Register</span>
+          </a>
+        </li>
           <?php
             }else if($_SESSION['sess_userrole']=="iadmin"){
           ?>
           <li class="treeview <?php if($currentPage =='dashboard_iadmin' ){echo 'active';}?>">
           <a href="dashboard_iadmin.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
+          <li class="treeview <?php if($currentPage =='register' ){echo 'active';}?>">
+          <a href="register.php">
+            <i class="fa fa-dashboard"></i> <span>Register</span>
           </a>
         </li>
           <?php
@@ -94,12 +104,22 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
+          <li class="treeview <?php if($currentPage =='register' ){echo 'active';}?>">
+          <a href="register.php">
+            <i class="fa fa-dashboard"></i> <span>Register</span>
+          </a>
+        </li>
           <?php
             }else if($_SESSION['sess_userrole']=="admin"){
           ?>
           <li class="treeview <?php if($currentPage =='dashboard_dcp' ){echo 'active';}?>">
           <a href="dashboard_dcp.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
+          <li class="treeview <?php if($currentPage =='register' ){echo 'active';}?>">
+          <a href="register.php">
+            <i class="fa fa-dashboard"></i> <span>Register</span>
           </a>
         </li>
           <?php
