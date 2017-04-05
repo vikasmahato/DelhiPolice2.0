@@ -29,7 +29,7 @@ if($_SESSION["sess_userrole"]!="acp"){
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Latest Orders</h3>
+              <h3 class="box-title">Latest Applications</h3>
             </div>
             <!-- /.box-header -->
               <div class="box-body">

@@ -30,11 +30,11 @@ switch ($choice) {
 }
     if(mysqli_query($con, $insetComment)){
         mysqli_query($con, $updateStatus);
-        echo "updated";
+        header('location: dashboard.php');
     }else {
-        echo "some error occurred";
+         header('location: some_error.php');
     }
-    header('location: dashboard.php');
+    
     }
 elseif(isset($_POST['deny_btn'])){
     
@@ -66,12 +66,13 @@ switch ($choice) {
 }
     if(mysqli_query($con, $insetComment)){
         mysqli_query($con, $updateStatus);
-        echo "updated";
+        header('location: dashboard.php');
     }else {
-        echo "some error occurred";
+        header('location: some_error.php');
+
     }
     
-    header('location: dashboard.php');
+   
     
 }elseif(isset($_POST['reeval_approve'])){
        

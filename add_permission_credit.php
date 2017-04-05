@@ -32,6 +32,6 @@ VALUES (CURDATE(), '$appName', '$pis', '$rank', '$relation','$relativeName', '$s
 if(mysqli_query($con, $sql)){
 header('location: dashboard.php');
 }else {
-    echo "Some error occurred";
+   header('location:some_error.php ');
 }
 ?>

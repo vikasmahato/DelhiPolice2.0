@@ -22,18 +22,11 @@ $diaryNo = $_POST['diaryNo'];
 
 $sql = "INSERT INTO register ( `diaryNo`, `diaryType`, `diaryDate`, `rank`, `applicantName`, `idNo`, `pis`, `treatment_by`, `hospitalName`, `type`, `amt_claimed`, `admis_amt`, `send_to`, `number`, `date`, `sanction_no`) VALUES ('$diaryNo','$diaryType','$diaryDate','$rank','$applicantName','$idNo','$pis','$treatment_by','$hospitalName','$type','$amt_claimed','$admis_amt','$send_to','$number','$date','$sanction_no')";
 
-
-/*if(mysqli_query($con, $sql))
-{
-    $last_id = mysqli_insert_id($con);
-    echo "New Record created Last ID = ".$last_id;
-}else  {
-    echo "Error: ".$sql . "<br>" . mysqli_error($con);
-}*/
 if(mysqli_query($con, $sql)){
-header('location: register.php');
+    $last_id = mysqli_insert_id($con);
+header('location: viewregister.php?id='.$last_id);
 }else {
-    echo "Some error occurred";
+    header('location:some_error.php ');
 }
 
 ?>

@@ -40,7 +40,6 @@ $sql = "UPDATE register SET `admis_amt`= '$admis_amt', `send_to`= '$send_to', `n
 if(mysqli_query($con, $sql)){
 header('location: register.php');
 }else {
-    echo "Some error occurred";
-}
+   header('location: some_error.php');
 
 ?>

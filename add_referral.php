@@ -32,7 +32,7 @@ if(mysqli_query($con, $sql)){
     $last_id =  mysqli_insert_id($con);
         header('location: checklist.php?id='.$last_id);
 }else{
-    header('location: error.php');
+    header('location:some_error.php ');
 }
 
 
