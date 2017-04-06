@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                 <?php
-                $sql = mysqli_query($con,"SELECT * FROM form");
+                $sql = mysqli_query($con,"SELECT * FROM form ORDER BY application_date DESC");
                 while($result = mysqli_fetch_array($sql))
                 {
                 ?>
