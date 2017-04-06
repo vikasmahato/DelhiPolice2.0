@@ -96,7 +96,7 @@
                   
                       <div class="form-group">
                   <label for="amt_claimed">Amount Claimed</label>
-               <input type="number" class="form-control" id="basic-url" name="amt_claimed" placeholder="Amount Claimed" required >
+               <input type="number" class="form-control" id="basic-url" name="amt_claimed" placeholder="Amount Claimed" >
                 </div>
                   
                   
