@@ -34,13 +34,6 @@ if($amt_claimed==""){
 $sql = "UPDATE register SET `admis_amt`= '$admis_amt', `send_to`= '$send_to', `amt_claimed`= '$amt_claimed', `date`= '$date', `sanction_no`= '$sanction_no' WHERE s_no = $id";
 echo $sql;
 
-/*if(mysqli_query($con, $sql))
-{
-    $last_id = mysqli_insert_id($con);
-    echo "New Record created Last ID = ".$last_id;
-}else  {
-    echo "Error: ".$sql . "<br>" . mysqli_error($con);
-}*/
 if(mysqli_query($con, $sql)){
 header('location: register.php');
 }else {

@@ -30,6 +30,7 @@
               <table id="godown" class="table table-bordered table-hover">
                 <thead>
                 <tr>
+                    <th>S no</th>
                   <th>Status</th>
                   <th>Name</th>
                   <th>Date</th>
@@ -39,11 +40,14 @@
                 </thead>
                 <tbody>
                 <?php
+                    $sno = 0;
                 $sql = mysqli_query($con,"SELECT * FROM form ORDER BY application_date DESC");
                 while($result = mysqli_fetch_array($sql))
                 {
+                    $sno++;
                 ?>
                 <tr>
+                    <td><?php echo $sno;?></td>
                        <td>
                            <?php if($result['status'] == 'HAG') { ?>
                            <span class="label label-default">HAG</span>
@@ -82,6 +86,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
+                    <th>S no</th>
                   <th>Status</th>
                   <th>Name</th>
                   <th>Date</th>

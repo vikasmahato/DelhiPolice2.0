@@ -1,6 +1,7 @@
 <?php include("includes/header.php"); ?>
 <?php 
-$sql = mysqli_query($con, "SELECT * FROM register WHERE s_no = '".$_GET['id']."'");
+$id=$_GET['id'];
+$sql = mysqli_query($con, "SELECT * FROM register WHERE s_no = $id");
 $result = mysqli_fetch_array($sql);
 ?>
   <div class="content-wrapper">
@@ -29,7 +30,11 @@ $result = mysqli_fetch_array($sql);
         	</div>
         <!-- /.col -->
             <div class="box-body">
-	          
+                <?php if($result['objection']==1){ ?>
+	          <blockquote>
+	          <strong>Under Objection </strong>
+	          </blockquote>
+                <?php } ?>
 	          <blockquote>
 	          <strong>Rank and Name: </strong>
 	           <?php echo $result['rank']." ".$result['applicantName']; ?>
@@ -92,7 +97,14 @@ $result = mysqli_fetch_array($sql);
                 <option value="PHQ">PHQ</option>
                </select>
 	          </blockquote>
-                    
+                
+           <!--     <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" type="text" value="<?php echo $result['date']; ?>">
+                </div>
+                    -->
                 <blockquote>
 	          <strong>Date: </strong>
                 <input type="text" class="form-control" id="datepicker" name="date" value="<?php echo $result['date']; ?>">
@@ -108,11 +120,12 @@ $result = mysqli_fetch_array($sql);
 		  </div>
               <input type="hidden"  value="<?php echo $result['s_no']; ?>" name="id" />
     
-        
+        <div class="row">
         <div class="col-md-6">
         
           <?php if ($_SESSION['sess_userrole']=="dealinghand"){ ?>
-    <button type="submit" class="btn btn-success btn-lg btn-block col-md-6" >Update</button>
+    <button type="submit" class="btn btn-success btn-lg btn-block col-md-6">Update</button>
+            
     
     <?php
       }
@@ -121,6 +134,26 @@ $result = mysqli_fetch_array($sql);
 
 		</div>
           </form>
+          
+          <div class="col-md-6">
+              
+           <?php if ($_SESSION['sess_userrole']=="dealinghand"){ ?>
+          <form action="addObjection.php" method="post">
+              <?php if($result['objection']==0){ ?>
+                <input type="hidden" value="1" name="objection">
+                 <input type="hidden"  value="<?php echo $result['s_no']; ?>" name="id" />
+                <button type="submit" class="btn btn-danger btn-lg btn-block col-md-6" >Objection</button>
+              <?php } else { ?> 
+               <input type="hidden" value="0" name="objection">
+                 <input type="hidden"  value="<?php echo $result['s_no']; ?>" name="id" />
+                <button type="submit" class="btn btn-danger btn-lg btn-block col-md-6" >Remove Objection</button>
+              <?php } ?>
+                </form>
+           <?php
+      }
+    ?>
+          </div>
+            </div>
         </div>
     </section>
 

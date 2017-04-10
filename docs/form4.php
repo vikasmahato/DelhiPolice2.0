@@ -51,7 +51,7 @@ table {
       <td></td>
         <td ></td>
         <td></td>
-        <td>Total</td>
+        <td><b>Total</b></td>
         <td >$value[amt_asked]</td>
         <td>$value[amt_granted]</td>
         </tr>

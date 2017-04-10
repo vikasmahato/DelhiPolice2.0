@@ -1,7 +1,7 @@
 <?php include ("includes/header.php");?>
 <?php 
- $sql1 = mysqli_query($con,"SELECT * FROM register WHERE diaryType='Individual'");
-$sql2 = mysqli_query($con,"SELECT * FROM register WHERE diaryType='Hospital'");
+ $sql1 = mysqli_query($con,"SELECT * FROM register WHERE diaryType='Individual' ORDER BY timestamp DESC");
+$sql2 = mysqli_query($con,"SELECT * FROM register WHERE diaryType='Hospital' ORDER BY timestamp DESC");
 
 $num_ind = mysqli_num_rows($sql1);
 $num_hosp = mysqli_num_rows($sql2);
@@ -101,6 +101,7 @@ $num_hosp = mysqli_num_rows($sql2);
               <table id="godown" class="table table-bordered table-hover">
                 <thead>
                 <tr>
+                    <th>S No</th>
                   <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -110,11 +111,11 @@ $num_hosp = mysqli_num_rows($sql2);
                 </thead>
                 <tbody>
                 <?php
-               
+               $sno1 = 0;
                 while($result = mysqli_fetch_array($sql1))
-                {
+                { $sno1++;
                 ?>
-                <tr>
+                <tr><td><?php echo $sno1; ?></td>
                        <td>
                       <?php echo $result['diaryNo']."/".$result['diaryType']."/Gen Br./SED/Dated/".$result['diaryDate']; ?>    
                     </td>  
@@ -131,6 +132,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 </tbody>
                 <tfoot>
                 <tr>
+                     <th>S No</th>
                     <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -168,6 +170,7 @@ $num_hosp = mysqli_num_rows($sql2);
             <table id="godown" class="table table-bordered table-hover">
                 <thead>
                 <tr>
+                     <th>S No</th>
                   <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -181,6 +184,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 {
                 ?>
                 <tr>
+                    <tr><td><?php echo $sno1; ?></td>
                        <td>
                       <?php echo $result1['diaryNo']."/".$result1['diaryType']."/Gen Br./SED/Dated/".$result1['diaryDate']; ?>    
                     </td>  
@@ -197,6 +201,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 </tbody>
                 <tfoot>
                 <tr>
+                     <th>S No</th>
                     <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
