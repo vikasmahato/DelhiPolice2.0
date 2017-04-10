@@ -74,7 +74,10 @@ $result = mysqli_fetch_array($sql);
         
         <!-- /.col -->
             <div class="box-body">
-                
+                 <blockquote>
+	          <strong>Amount Claimed: </strong>
+	           <input type="number" class="form-control" id="basic-url" name="amt_claimed" value="<?php echo $result['amt_claimed']; ?>">
+	          </blockquote>
 	            <blockquote>
 	          <strong>Amount Admissible: </strong>
 	           <input type="number" class="form-control" id="basic-url" name="admis_amt" value="<?php echo $result['admis_amt']; ?>">
@@ -84,16 +87,11 @@ $result = mysqli_fetch_array($sql);
                  <blockquote>
 	          <strong>Send To: </strong>
 	           <select class="custom-select form-control" name="send_to">
-                <option value="" selected disabled>Please select</option>
+                <option value=" " selected>Please select</option>
                 <option value="Account Br.">Account Br.</option>
                 <option value="PHQ">PHQ</option>
                </select>
 	          </blockquote>
-                
-                 <blockquote>
-	          <strong>Number: </strong>
-                <input type="number" class="form-control" id="basic-url" name="number" value="<?php echo $result['number']; ?>">
-	           </blockquote>
                     
                 <blockquote>
 	          <strong>Date: </strong>

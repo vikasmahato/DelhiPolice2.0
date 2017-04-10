@@ -5,10 +5,11 @@ include("includes/dbcon.php");
 
     $admis_amt = $_POST['admis_amt'];
     $send_to = $_POST['send_to'];
-    $number = $_POST['number'];
     $date = $_POST['date'];
     $sanction_no = $_POST['sanction_no'];
     $id = $_POST['id'];
+    $amt_claimed = $_POST['amt_claimed'];
+
 
 if($admit_amt==""){
     $admit_amt = " ";
@@ -25,10 +26,13 @@ if($date==""){
 if($sanction_no==""){
     $sanction_no = " ";
 }
+if($amt_claimed==""){
+    $amt_claimed = " ";
+}
 
 
-$sql = "UPDATE register SET `admis_amt`= '$admis_amt', `send_to`= '$send_to', `number`= '$number', `date`= '$date', `sanction_no`= '$sanction_no' WHERE s_no = $id";
-
+$sql = "UPDATE register SET `admis_amt`= '$admis_amt', `send_to`= '$send_to', `amt_claimed`= '$amt_claimed', `date`= '$date', `sanction_no`= '$sanction_no' WHERE s_no = $id";
+echo $sql;
 
 /*if(mysqli_query($con, $sql))
 {
@@ -41,5 +45,6 @@ if(mysqli_query($con, $sql)){
 header('location: register.php');
 }else {
    header('location: some_error.php');
+}
 
 ?>
