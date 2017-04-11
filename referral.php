@@ -105,6 +105,11 @@
                   
                   
                       <div class="form-group">
+                  <label for="refhospitalName">Enter Referring Hospital Name</label>
+                 <input type="text" class="form-control" id="basic-url" name="refHospitalName" placeholder="Referring Hospital Name" required >
+                </div>
+                  
+                      <div class="form-group">
                   <label for="hospitalName">Enter Hospital Name</label>
                  <input type="text" class="form-control" id="basic-url" name="hospitalName" placeholder="Hospital Name" required >
                 </div>
