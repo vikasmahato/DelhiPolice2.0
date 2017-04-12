@@ -1,9 +1,9 @@
 <?php 
 $string1 = "";
-$string2 = "$value[a_cghs_no]";
-if($value['relation']!="own"){
-    $string1 = "$value[relation] of";
-    $string2 = "$value[r_cghs_no]";
+$string2 = $value['a_cghs_no'];
+if($value['r_cghs_no']!=0){
+    $string1 = $value['relation']." of";
+    $string2 = $value['r_cghs_no'];
 }
 $form13 = "<html lang='en'>
   <head>
