@@ -29,6 +29,12 @@ table {
     border-collapse: collapse;
     margin-bottom:15px;
 }
+td {
+   font-size: 60%;
+}
+th {
+   font-size: 95%;
+}
       </style> 
   </head>
   <body>
@@ -39,12 +45,12 @@ table {
        <table class='table' style='margin-right:3px;'>
       <tbody>
       <tr>
-        <td width='2%'>Sr. No.</td>
-        <td width='20%'>Bill no. &<br> Name of the Hospital</td>
-        <td width='15%'>Date of Bill</td>
-        <td width='35%'>Name of the Tests/<br>Medicines etc.</td>
-        <td width='14%'>Amount <br> claimed</td>
-        <td width='14%'>Admissible <br> Amount</td>
+        <th width='2%'>Sr. No.</td>
+        <th width='20%'>Bill no. &<br> Name of the Hospital</td>
+        <th width='15%'>Date of Bill</td>
+        <th width='35%'>Name of the Tests/Medicines etc.</td>
+        <th width='14%'>Amount <br> claimed</td>
+        <th width='14%'>Admissible <br> Amount</td>
       </tr>
      $data
      <tr>

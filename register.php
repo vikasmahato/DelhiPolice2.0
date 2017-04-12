@@ -2,7 +2,8 @@
 <?php 
  $sql1 = mysqli_query($con,"SELECT * FROM register WHERE diaryType='Individual' ORDER BY timestamp DESC");
 $sql2 = mysqli_query($con,"SELECT * FROM register WHERE diaryType='Hospital' ORDER BY timestamp DESC");
-
+$objection = mysqli_query($con,"SELECT * FROM register WHERE objection='1' ORDER BY timestamp DESC");
+$pending = mysqli_query($con,"SELECT * FROM register WHERE sanction_no='' ORDER BY timestamp DESC");
 $num_ind = mysqli_num_rows($sql1);
 $num_hosp = mysqli_num_rows($sql2);
 ?>
@@ -40,7 +41,7 @@ $num_hosp = mysqli_num_rows($sql2);
             <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Hospital App.<br>this month</span>
+              <span class="info-box-text">Hospital App.</span>
               <span class="info-box-number"><?php echo  $num_hosp; ?></span>
             </div>
             <!-- /.info-box-content -->
@@ -52,7 +53,7 @@ $num_hosp = mysqli_num_rows($sql2);
             <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Individual App.<br>this month</span>
+              <span class="info-box-text">Individual App.</span>
               <span class="info-box-number"><?php echo  $num_ind; ?></span>
             </div>
             <!-- /.info-box-content -->
@@ -80,6 +81,8 @@ $num_hosp = mysqli_num_rows($sql2);
    <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#menu1">Individual</a></li>
     <li><a data-toggle="tab" href="#menu2">Hospital</a></li>
+        <li><a data-toggle="tab" href="#menu3">Objection</a></li>
+        <li><a data-toggle="tab" href="#menu4">Pending</a></li>
   </ul>
         
 <div class="tab-content">
@@ -221,7 +224,145 @@ $num_hosp = mysqli_num_rows($sql2);
         <!-- /.col -->
       </div>
     </div>
-    
+        <div id="menu3" class="tab-pane fade">
+            <h3>Objection</h3>
+      <div class="row">
+        <!-- Left col -->
+        <div class="col-md-12">
+          <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Latest Applications</h3>
+            </div>
+            <!-- /.box-header -->
+      
+           
+                
+                 <div class="box-body">
+            <table id="godown" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                     <th>S No</th>
+                  <th>Diary No</th>
+                  <th>Rank/Name/No</th>
+                  <th>Treatment Taken By</th>
+                    <th>Type</th>
+                  <th>Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                while($result1 = mysqli_fetch_array($objection))
+                {
+                ?>
+                <tr>
+                    <tr><td><?php echo $sno1; ?></td>
+                       <td>
+                      <?php echo $result1['diaryNo']."/".$result1['diaryType']."/Gen Br./SED/Dated/".$result1['diaryDate']; ?>    
+                    </td>  
+                    
+                    
+                  <td><?php echo $result1['rank']." ".$result1['applicantName']." No.".$result1['idNo']; ?></td>
+                     <td><?php echo $result1['treatment_by'] ?></td>
+                    <td><?php echo $result1['type'] ?></td>
+                <td><a class="btn btn-block btn-default" href="viewregister.php?id=<?php echo $result1['s_no']; ?>"><i class="fa fa-eye"></i> View</a></td>
+                </tr>
+                <?php 
+                }
+                ?>
+                </tbody>
+                <tfoot>
+                <tr>
+                     <th>S No</th>
+                    <th>Diary No</th>
+                  <th>Rank/Name/No</th>
+                  <th>Treatment Taken By</th>
+                    <th>Type</th>
+                  <th>Details</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+      
+           
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+   
+        <!-- /.col -->
+      </div>
+    </div>
+        <div id="menu4" class="tab-pane fade">
+            <h3>Pending</h3>
+      <div class="row">
+        <!-- Left col -->
+        <div class="col-md-12">
+          <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Latest Applications</h3>
+            </div>
+            <!-- /.box-header -->
+      
+           
+                
+                 <div class="box-body">
+            <table id="godown" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                     <th>S No</th>
+                  <th>Diary No</th>
+                  <th>Rank/Name/No</th>
+                  <th>Treatment Taken By</th>
+                    <th>Type</th>
+                  <th>Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                while($result1 = mysqli_fetch_array($pending))
+                {
+                ?>
+                <tr>
+                    <tr><td><?php echo $sno1; ?></td>
+                       <td>
+                      <?php echo $result1['diaryNo']."/".$result1['diaryType']."/Gen Br./SED/Dated/".$result1['diaryDate']; ?>    
+                    </td>  
+                    
+                    
+                  <td><?php echo $result1['rank']." ".$result1['applicantName']." No.".$result1['idNo']; ?></td>
+                     <td><?php echo $result1['treatment_by'] ?></td>
+                    <td><?php echo $result1['type'] ?></td>
+                <td><a class="btn btn-block btn-default" href="viewregister.php?id=<?php echo $result1['s_no']; ?>"><i class="fa fa-eye"></i> View</a></td>
+                </tr>
+                <?php 
+                }
+                ?>
+                </tbody>
+                <tfoot>
+                <tr>
+                     <th>S No</th>
+                    <th>Diary No</th>
+                  <th>Rank/Name/No</th>
+                  <th>Treatment Taken By</th>
+                    <th>Type</th>
+                  <th>Details</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+      
+           
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+   
+        <!-- /.col -->
+      </div>
+    </div>
+     
       <!-- Modal -->
 <div class="modal fade" id="launch_query" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">

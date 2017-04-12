@@ -26,7 +26,9 @@ if(mysqli_query($con, $sql)){
     $last_id = mysqli_insert_id($con);
 header('location: viewregister.php?id='.$last_id);
 }else {
-    header('location:some_error.php ');
+    echo $sql;
+    echo mysqli_error($con);
+   // header('location:some_error.php ');
 }
 
 ?>
