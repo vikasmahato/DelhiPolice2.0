@@ -36,7 +36,7 @@ $sql = mysqli_query($con,$query);
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Latest Applications</h3>
+              <h3 class="box-title">Results</h3>
             </div>
             <!-- /.box-header -->
               <div class="box-body">

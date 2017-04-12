@@ -54,7 +54,7 @@ table {
         <th>Rank, Name & No. of the beneficiary</th>
         <th>Name of Hospital</th>
         <th>Name of disease</th>
-        <th>Period of treatment <br>(yy-mm-dd):</th>
+        <th>Period of treatment</th>
         <th>Amount claimed</th>
         <th>Amount admissible</th>
       </tr>
