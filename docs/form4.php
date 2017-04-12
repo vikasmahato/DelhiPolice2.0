@@ -34,7 +34,7 @@ table {
   <body>
       <div class='container'>
        <h3>CALCULATION SHEET</h3>
-          <p style='text-align:justify;'>Details of expenditures incurred on the treatment of<b> $string Belt No. $value[police_station_no] at $value[hospital_name] (Name of the Hospital)</b> where he/she remained admitted/under treatment from<b> $value[startdate] to $value[enddate](yy-mm-dd)</b>.
+          <p style='text-align:justify;'>Details of expenditures incurred on the treatment of<b> $string Belt No. $value[police_station_no] at $value[hospital_name] (Name of the Hospital)</b> where he/she remained admitted/under treatment from<b> $value[startdate] to $value[enddate]</b>.
           </p>
        <table class='table' style='margin-right:3px;'>
       <tbody>
@@ -62,7 +62,7 @@ table {
 <div style='margin-top:10px;'>Signature of Head Assistant         ____________________</div>
 <div style='margin-top:10px;'>Signature of Inspector Administration___________________</div>
 <div style='text-align:center;margin-bottom:10px;margin-top:10px;'>VERIFIED</div>
-<div style='text-align:center;font-weight:bold'>ASSTT. COMMISIONER OF POLICE (HQ),</div>
+<div style='text-align:center;font-weight:bold;margin-top:30px;'>ASSTT. COMMISIONER OF POLICE (HQ),</div>
 <div style='text-align:center;font-weight:bold'>SOUTH-EAST DISTRICT, NEW DELHI.</div>
 </div>
 </body>

@@ -27,6 +27,8 @@ if(mysqli_query($con, $sql)){
 header('location: viewregister.php?id='.$last_id);
 }else {
     header('location:some_error.php ');
+    //echo $sql;
+    //echo mysqli_error($con);
 }
 
 ?>
