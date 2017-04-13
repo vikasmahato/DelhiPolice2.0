@@ -8,7 +8,7 @@ $result = mysqli_fetch_array($sql);
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        View Application
+        View Application <?php echo $result['s_no']; ?>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>

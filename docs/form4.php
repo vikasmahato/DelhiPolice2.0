@@ -12,7 +12,7 @@ $form4 ="<html>
    <style>
         .container{
             font-size: 1.2em;
-            margin-bottom: 100px;
+            margin-bottom: 10px;
             margin-top: 10px;
         }
     
@@ -30,7 +30,7 @@ table {
     margin-bottom:15px;
 }
 td {
-   font-size: 60%;
+   font-size: 80%;
 }
 th {
    font-size: 95%;
