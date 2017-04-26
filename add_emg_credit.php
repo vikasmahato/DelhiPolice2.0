@@ -22,7 +22,7 @@ $diaryDate = $_POST['diaryDate'];
 $amtAsked = $_POST['amtAsked'];
 $disease = $_POST['disease'];
 $relativeName = $_POST['relativeName'];
-$hospitalAddress= " ";
+$hospitalAddress= " "; 
 $sql = "INSERT INTO form (application_date, applicant_name, pis, rank, relation, relative_name, startdate, hospital_name, hospital_address, police_station_no, diary_no, a_cghs_no, a_cghs_exp, r_cghs_no, r_cghs_exp, a_cghs_category, diary_date, claim_type, status, disease ) 
 
 VALUES (CURDATE(), '$appName', '$pis', '$rank', '$relation','$relativeName', '$startDate', '$hospitalName', '$hospitalAddress', '$policestationNo', '$diaryNo',$appCGHSno,'$appCGHSexp',$refCGHSno,'$refCGHSexp','$appCGHScategory', '$diaryDate','IP_EMERGENCY', 'HAG', '$disease')";

@@ -136,7 +136,7 @@
                 </div>
                   
                       <div class="form-group" id="dependent2">
-                  <label for="hospitalAddress">Enter the CGHS No of Dependent</label>
+                  <label for="refCGHSno">Enter the CGHS No of Dependent</label>
                <input type="text" class="form-control" id="basic-url" name="refCGHSno" placeholder="Dependent CGHS No" value="0000">
                 </div>
                   
@@ -170,7 +170,7 @@
                 </div>
                   
                       <div class="form-group">
-                  <label for="hospitalAddress">Enter the category of CGHS Applicant</label>
+                  <label for="appCGHScategory">Enter the category of CGHS Applicant</label>
                <select class="custom-select form-control" name="appCGHScategory" required >
                 <option value="" selected disabled>Please select</option>
                 <option value="General">General</option>
@@ -185,6 +185,7 @@
                   
         <input type="hidden" name="pincode" value=0>
         <input type="hidden" name="amtAsked" value=0>
+        <input type="hidden" name="hospitalAddress" value="NULL">
               </div>
             
 	   

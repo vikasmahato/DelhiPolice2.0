@@ -5,8 +5,22 @@ include("includes/dbcon.php");
 
   
  $id = $_POST['id'];
+
 $objection = $_POST['objection'];
-$sql = "UPDATE register SET `objection`= '$objection' WHERE s_no = $id";
+
+$diaryType = $_POST['diaryType'];
+
+$table = '';
+
+if($diaryType=='Individual'){
+ $table='register';   
+}elseif($diaryType=='Hospital'){
+ $table='register_hospital';   
+}
+
+
+
+$sql = "UPDATE $table SET `objection`= '$objection' WHERE s_no = $id";
 //echo $sql;
 
 if(mysqli_query($con, $sql)){

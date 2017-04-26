@@ -1,7 +1,18 @@
 <?php include("includes/header.php"); ?>
 <?php 
 $id=$_GET['id'];
-$sql = mysqli_query($con, "SELECT * FROM register WHERE s_no = $id");
+$type=$_GET['type'];
+
+$table = '';
+
+if($type=='Individual'){
+ $table='register';   
+}elseif($type=='Hospital'){
+ $table='register_hospital';   
+}
+
+
+$sql = mysqli_query($con, "SELECT * FROM $table WHERE s_no = $id");
 $result = mysqli_fetch_array($sql);
 ?>
   <div class="content-wrapper">
@@ -142,10 +153,12 @@ $result = mysqli_fetch_array($sql);
               <?php if($result['objection']==0){ ?>
                 <input type="hidden" value="1" name="objection">
                  <input type="hidden"  value="<?php echo $result['s_no']; ?>" name="id" />
+               <input type="hidden"  value="<?php echo $result['diaryType']; ?>" name="diaryType" />
                 <button type="submit" class="btn btn-danger btn-lg btn-block col-md-6" >Objection</button>
               <?php } else { ?> 
                <input type="hidden" value="0" name="objection">
                  <input type="hidden"  value="<?php echo $result['s_no']; ?>" name="id" />
+              <input type="hidden"  value="<?php echo $result['diaryType']; ?>" name="diaryType" />
                 <button type="submit" class="btn btn-danger btn-lg btn-block col-md-6" >Remove Objection</button>
               <?php } ?>
                 </form>

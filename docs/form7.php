@@ -43,10 +43,10 @@ text-align:center;
         <div style='margin-bottom:10px;margin-left:92px;'>General Administration/PHQ, Delhi</div>
         <div class='row'>
           <div class='col-md-2' style='margin-bottom:0px;padding-bottom:0px;'>Subject:-</div>
-          <div class='col-md-10'style='margin-left:100px;padding-top=0px;margin-top=0px;'>Regarding medical re-imbursement claim in respect of <b> $value[applicant_name] No. $value[police_station_no].</b></div></div>
+          <div class='col-md-10'style='margin-left:100px;padding-top=0px;margin-top=0px;'>Regarding medical re-imbursement claim in respect of <b>$value[rank] $value[applicant_name] No. $value[police_station_no].</b></div></div>
         <div style='margin-top:10px;'>Memo</div>
           <p style='text-indent:12%;text-align:justify;'>
-              Enclosed please find herewith a medical re-imbursement claim along with all the original papers in respect of <b>$value[applicant_name] No. $value[police_station_no]</b> vide which she/he has intimated that the condition of his/her<b> $value[relation] </b>has suddenly become deteriorated and she/he was admitted in private hospital in emergency.  As per the M.A. Rules, calculation sheet has been prepared which is enclosed herewith.</p>
+              Enclosed please find herewith a medical re-imbursement claim along with all the original papers in respect of <b>$value[rank] $value[applicant_name] No. $value[police_station_no]</b> vide which she/he has intimated that the condition of his/her<b> $value[relation] </b>has suddenly become deteriorated and she/he was admitted in private hospital in emergency.  As per the M.A. Rules, calculation sheet has been prepared which is enclosed herewith.</p>
       <table class='table'>
     <tbody>
       <tr>
