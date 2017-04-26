@@ -108,7 +108,7 @@
                       <div class="form-group">
                   <label for="send_to">Send To</label>
                    <select class="custom-select form-control" name="send_to" >
-                         <option value=" " selected disabled>Please select</option>
+                         <option value="  " selected>Please select</option>
                          <option value="Account Br.">Account Br.</option>
                          <option value="PHQ">PHQ</option>
                     </select>

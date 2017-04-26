@@ -19,6 +19,7 @@ $diaryNo = $_POST['diaryNo'];
     $number = $_POST['number'];
     $date = $_POST['date'];
     $sanction_no = $_POST['sanction_no'];
+$table = '';
 if($diaryType=='Individual'){
  $table='register';   
 }elseif($diaryType=='Hospital'){
@@ -30,11 +31,11 @@ $sql = "INSERT INTO $table ( `diaryNo`, `diaryType`, `diaryDate`, `rank`, `appli
 
 if(mysqli_query($con, $sql)){
     $last_id = mysqli_insert_id($con);
-header('location: viewregister.php?id='.$last_id);
+header('location: viewregister.php?id='.$last_id.'&type='.$diaryType);
 }else {     
-    header('location:some_error.php ');
-    //echo $sql;
-    //echo mysqli_error($con);
+    //header('location:some_error.php ');
+    echo $sql;
+    echo mysqli_error($con);
 }
 
 ?>
