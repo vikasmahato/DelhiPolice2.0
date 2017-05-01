@@ -3,11 +3,21 @@
 $month = $_POST['month'];
 $diaryType = $_POST['diaryType'];
 
-$query = "SELECT * 
+if($diaryType=='Individual'){
+    $query = "SELECT * 
         FROM register
         WHERE Year(timestamp) = Year(CURRENT_TIMESTAMP) 
         AND Month(timestamp) = $month
-        AND diaryType = '$diaryType'";
+        AND diaryType = 'Individual'";
+} elseif($diaryType=='Hospital'){
+    $query = "SELECT * 
+        FROM register_hospital
+        WHERE Year(timestamp) = Year(CURRENT_TIMESTAMP) 
+        AND Month(timestamp) = $month
+        AND diaryType = 'Hospital'";
+}
+
+
 
 $sql = mysqli_query($con,$query);
     

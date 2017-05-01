@@ -95,11 +95,13 @@ $result = mysqli_fetch_array($sql);
                 <div class='col-md-3'><button type='submit' class='btn btn-info' name='form2_btn'>Notesheet</button></div>
         <div class='col-md-3'><button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button></div>
         <div class='col-md-3'><button type='submit' class='btn btn-info'name='form15_btn'>Order</button></div>
+        <div class='col-md-3'><a href="editCalcSheet.php?id=<?php echo $_GET['id']; ?>" class='btn btn-danger' name='edit'>Edit Calculation Sheet</a> </div>
           <?php
             break;
             case 'IP_EMERGENCY': ?>
           <div class='col-md-3'><button type='submit' class='btn btn-info' name='form3_btn'>Forwarding Letter</button></div>
        <div class='col-md-3'><button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button> </div>
+        <div class='col-md-3'><a href="editCalcSheet.php?id=<?php echo $_GET['id']; ?>" class='btn btn-danger' name='edit'>Edit Calculation Sheet</a> </div>
           <?php
             break;
             }

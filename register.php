@@ -191,7 +191,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 {
                 ?>
                 <tr>
-                    <tr><td><?php echo $result1['s_no']; ?></td>
+                    <tr><td><?php echo $num_hosp; ?></td>
                        <td>
                       <?php echo $result1['diaryNo']."/".$result1['diaryType']."/Gen Br./SED/Dated/".$result1['diaryDate']; ?>    
                     </td>  
@@ -203,6 +203,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 <td><a class="btn btn-block btn-default" href="viewregister.php?id=<?php echo $result1['s_no']; ?>&type=<?php echo $result1['diaryType']; ?>"><i class="fa fa-eye"></i> View</a></td>
                 </tr>
                 <?php 
+                    $num_hosp--;
                 }
                 ?>
                 </tbody>

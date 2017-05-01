@@ -14,7 +14,9 @@ $appid = $_POST['appId'];
 $arrlength = count($itemNo);
 
 
-    
+    if(isset($_POST['edit'])){
+        mysqli_query($con, "DELETE FROM medical WHERE app_id = ".$appid);
+    }
     
     if($subtotal > 200000)
     
