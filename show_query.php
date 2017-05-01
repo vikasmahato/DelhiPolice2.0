@@ -8,18 +8,20 @@ if($diaryType=='Individual'){
         FROM register
         WHERE Year(timestamp) = Year(CURRENT_TIMESTAMP) 
         AND Month(timestamp) = $month
-        AND diaryType = 'Individual'";
+        AND diaryType = 'Individual' ORDER BY timestamp DESC";
 } elseif($diaryType=='Hospital'){
     $query = "SELECT * 
         FROM register_hospital
         WHERE Year(timestamp) = Year(CURRENT_TIMESTAMP) 
         AND Month(timestamp) = $month
-        AND diaryType = 'Hospital'";
+        AND diaryType = 'Hospital' ORDER BY timestamp DESC";
 }
 
 
 
 $sql = mysqli_query($con,$query);
+
+$num = mysqli_num_rows($sql);
     
 ?>
   <!-- Content Wrapper. Contains page content -->
@@ -53,6 +55,7 @@ $sql = mysqli_query($con,$query);
                     <table id="godown" class="table table-bordered table-hover">
                 <thead>
                 <tr>
+                    <th>S No</th>
                   <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -67,6 +70,7 @@ $sql = mysqli_query($con,$query);
                 {
                 ?>
                 <tr>
+                    <td><?php echo $num; ?></td>
                        <td>
                       <?php echo $result['diaryNo']."/".$result['diaryType']."/Gen Br./SED/Dated/".$result['diaryDate']; ?>    
                     </td>  
@@ -78,11 +82,13 @@ $sql = mysqli_query($con,$query);
                 <td><a class="btn btn-block btn-default" href="viewregister.php?id=<?php echo $result['s_no']; ?>"><i class="fa fa-eye"></i> View</a></td>
                 </tr>
                 <?php 
+                    $num--;
                 }
                 ?>
                 </tbody>
                 <tfoot>
                 <tr>
+                    <th>S No</th>
                     <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>

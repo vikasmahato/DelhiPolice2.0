@@ -1,7 +1,7 @@
 <?php include ("includes/header.php");?>
 <?php 
- $sql1 = mysqli_query($con,"SELECT * FROM register WHERE diaryType='Individual' ORDER BY timestamp DESC");
-$sql2 = mysqli_query($con,"SELECT * FROM register_hospital WHERE diaryType='Hospital' ORDER BY timestamp DESC");
+ $sql1 = mysqli_query($con,"SELECT * FROM register WHERE diaryType='Individual' AND  Month(timestamp) = Month(CURRENT_TIMESTAMP)  ORDER BY timestamp DESC");
+$sql2 = mysqli_query($con,"SELECT * FROM register_hospital WHERE diaryType='Hospital' AND  Month(timestamp) = Month(CURRENT_TIMESTAMP) ORDER BY timestamp DESC");
 $ind_objection = mysqli_query($con,"SELECT * FROM register WHERE objection='1' AND diaryType='Individual' ORDER BY timestamp DESC");
 $hos_objection = mysqli_query($con,"SELECT * FROM register_hospital WHERE objection='1' AND diaryType='Hospital' ORDER BY timestamp DESC");
 $pending_ind = mysqli_query($con,"SELECT * FROM register WHERE sanction_no=''  ORDER BY timestamp DESC");
@@ -118,11 +118,11 @@ $num_hosp = mysqli_num_rows($sql2);
                 </thead>
                 <tbody>
                 <?php
-               $sno1 = 0;
+               
                 while($result = mysqli_fetch_array($sql1))
-                { $sno1++;
+                { 
                 ?>
-                <tr><td><?php echo $result['s_no']; ?></td>
+                <tr><td><?php echo $num_ind; ?></td>
                        <td>
                       <?php echo $result['diaryNo']."/".$result['diaryType']."/Gen Br./SED/Dated/".$result['diaryDate']; ?>    
                     </td>  
@@ -134,6 +134,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 <td><a class="btn btn-block btn-default" href="viewregister.php?id=<?php echo $result['s_no']; ?>&type=<?php echo $result['diaryType']; ?>"><i class="fa fa-eye"></i> View</a></td>
                 </tr>
                 <?php 
+                    $num_ind--;
                 }
                 ?>
                 </tbody>
@@ -244,7 +245,7 @@ $num_hosp = mysqli_num_rows($sql2);
             <table id="godown" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                     <th>S No</th>
+                   
                   <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -258,7 +259,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 {
                 ?>
                 <tr>
-                    <tr><td><?php echo $result1['s_no']; ?></td>
+                    <tr>
                        <td>
                       <?php echo $result1['diaryNo']."/".$result1['diaryType']."/Gen Br./SED/Dated/".$result1['diaryDate']; ?>    
                     </td>  
@@ -275,7 +276,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 </tbody>
                 <tfoot>
                 <tr>
-                     <th>S No</th>
+                    
                     <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -311,7 +312,7 @@ $num_hosp = mysqli_num_rows($sql2);
             <table id="godown" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                     <th>S No</th>
+                     
                   <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -325,7 +326,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 {
                 ?>
                 <tr>
-                    <tr><td><?php echo $result1['s_no']; ?></td>
+                    <tr>
                        <td>
                       <?php echo $result1['diaryNo']."/".$result1['diaryType']."/Gen Br./SED/Dated/".$result1['diaryDate']; ?>    
                     </td>  
@@ -342,7 +343,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 </tbody>
                 <tfoot>
                 <tr>
-                     <th>S No</th>
+                    
                     <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -380,7 +381,7 @@ $num_hosp = mysqli_num_rows($sql2);
             <table id="godown" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                     <th>S No</th>
+                    
                   <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -394,7 +395,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 {
                 ?>
                 <tr>
-                    <tr><td><?php echo $result1['s_no']; ?></td>
+                    <tr>
                        <td>
                       <?php echo $result1['diaryNo']."/".$result1['diaryType']."/Gen Br./SED/Dated/".$result1['diaryDate']; ?>    
                     </td>  
@@ -411,7 +412,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 </tbody>
                 <tfoot>
                 <tr>
-                     <th>S No</th>
+                   
                     <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -449,7 +450,7 @@ $num_hosp = mysqli_num_rows($sql2);
             <table id="godown" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                     <th>S No</th>
+                    
                   <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
@@ -463,7 +464,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 {
                 ?>
                 <tr>
-                    <tr><td><?php echo $result1['s_no']; ?></td>
+                    <tr>
                        <td>
                       <?php echo $result1['diaryNo']."/".$result1['diaryType']."/Gen Br./SED/Dated/".$result1['diaryDate']; ?>    
                     </td>  
@@ -480,7 +481,7 @@ $num_hosp = mysqli_num_rows($sql2);
                 </tbody>
                 <tfoot>
                 <tr>
-                     <th>S No</th>
+                     
                     <th>Diary No</th>
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
