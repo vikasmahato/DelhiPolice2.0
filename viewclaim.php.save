@@ -71,51 +71,45 @@ $result = mysqli_fetch_array($sql);
         	</div>
 		    </div>
 		  </div>
-            <div class="col-md-6">
           <form action="createpdf.php" method="post">
               <input type="hidden"  value="<?php echo $result['app_id']; ?>" name="id" />
           <?php switch($result['claim_type']){
             //permission treatment
             case 'PERMISSION': ?>
-               <button type='submit' class='btn btn-info  btn-lg btn-block col-md-6' name='form12_btn'>Notesheet</button>
-      <button type='submit' class='btn btn-info  btn-lg btn-block col-md-6'name='form13_btn'>Permission</button>
+                <div class='col-md-3'><button type='submit' class='btn btn-info' name='form12_btn'>Notesheet</button></div>
+        <div class='col-md-3'><button type='submit' class='btn btn-info'name='form13_btn'>Permission</button></div>
           <?php 
             break; //permision credit
             case 'CREDIT': ?>
-              <button type='submit' class='btn btn-info  btn-lg btn-block col-md-6' name='form10_btn'>Notesheet</button>
-       <button type='submit' class='btn btn-info  btn-lg btn-block col-md-6'name='form22_btn'>Permission</button>
+                <div class='col-md-3'><button type='submit' class='btn btn-info' name='form10_btn'>Notesheet</button></div>
+        <div class='col-md-3'><button type='submit' class='btn btn-info'name='form22_btn'>Permission</button></div>
           <?php
             break;
             case 'OP_EMERGENCY': ?>
-            <button type='submit' class='btn btn-info  btn-lg btn-block col-md-6' name='form7_btn'>Forwarding Letter</button>
-       <button type='submit' class='btn btn-info  btn-lg btn-block col-md-6' name='form4_btn'>Calculation Sheet</button>
-               <?php if ($_SESSION['sess_userrole']=="dealinghand"){ ?>
-               <a href="editCalcSheet.php?id=<?php echo $_GET['id']; ?>" class='btn btn-danger  btn-lg btn-block col-md-6' name='edit'>Edit Calculation Sheet</a>
-               <?php } ?>
+                <button type='submit' class='btn btn-info' name='form7_btn'>Forwarding Letter</button></div>
+    <button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button>
+ <div class='col-md-3 row'><a href="editCalcSheet.php?id=<?php echo $_GET['id']; ?>" class='btn btn-danger' name='edit'>Edit Calculation Sheet</a> </div>
+        </div>
           <?php
             break; 
             case 'OP_REFERRAL': ?>
-               <button type='submit' class='btn btn-info  btn-lg btn-block col-md-6' name='form2_btn'>Notesheet</button>
-     <button type='submit' class='btn btn-info  btn-lg btn-block col-md-6'name='form4_btn'>Calculation Sheet</button>
-        <button type='submit' class='btn btn-info  btn-lg btn-block col-md-6'name='form15_btn'>Order</button>
-        <?php if ($_SESSION['sess_userrole']=="dealinghand"){ ?>
-              <a href="editCalcSheet.php?id=<?php echo $_GET['id']; ?>" class='btn btn-danger  btn-lg btn-block col-md-6' name='edit'>Edit Calculation Sheet</a>
-     <?php } ?>
+                <div class='col-md-3'><button type='submit' class='btn btn-info' name='form2_btn'>Notesheet</button></div>
+        <div class='col-md-3'><button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button></div>
+        <div class='col-md-3'><button type='submit' class='btn btn-info'name='form15_btn'>Order</button></div>
+        <div class='col-md-3'><a href="editCalcSheet.php?id=<?php echo $_GET['id']; ?>" class='btn btn-danger' name='edit'>Edit Calculation Sheet</a> </div>
           <?php
             break;
             case 'IP_EMERGENCY': ?>
-         <button type='submit' class='btn btn-info' name='form3_btn'>Forwarding Letter</button>
-      <button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button>
-                <?php if ($_SESSION['sess_userrole']=="dealinghand"){ ?>
-       <a href="editCalcSheet.php?id=<?php echo $_GET['id']; ?>" class='btn btn-danger' name='edit'>Edit Calculation Sheet</a>
-                <?php } ?>
+          <div class='col-md-3'><button type='submit' class='btn btn-info' name='form3_btn'>Forwarding Letter</button></div>
+       <div class='col-md-3'><button type='submit' class='btn btn-info'name='form4_btn'>Calculation Sheet</button> </div>
+        <div class='col-md-3'><a href="editCalcSheet.php?id=<?php echo $_GET['id']; ?>" class='btn btn-danger' name='edit'>Edit Calculation Sheet</a> </div>
           <?php
             break;
             }
           ?>
           </form>
         
-      
+        <div class="col-md-6">
         
           <?php if ($_SESSION['sess_userrole']!="dealinghand"){ ?>
     <button type="button" class="btn btn-success btn-lg btn-block col-md-6" data-toggle="modal" data-target="#approveModal">Approve</button>

@@ -106,25 +106,22 @@
                 </div>
                   
                       <div class="form-group">
-                  <label for="send_to">Send To</label>
-                   <select class="custom-select form-control" name="send_to" >
-                         <option value="  " selected>Please select</option>
-                         <option value="Account Br.">Account Br.</option>
-                         <option value="PHQ">PHQ</option>
-                    </select>
+                
               
                 
-                  <label for="number">Number</label>
+                  <label for="number">Send to PHQ</label>
                <input type="number" class="form-control" id="basic-url" name="number" placeholder="Number">
             
                
-                  <label for="date">Date</label>
+                  <label for="date">PHQ Date</label>
                <input type="text" class="form-control" id="datepicker" name="date" placeholder="Date">
                 </div>
                   
                      <div class="form-group">
                   <label for="sanction_no">Sanction No</label>
                <input type="number" class="form-control" id="basic-url" name="sanction_no" placeholder="Sanction No">
+                         <label for="date">Sanction Date</label>
+               <input type="text" class="form-control" id="datepicker" name="sanction_date" placeholder="Date">
                 </div>
                   
                 

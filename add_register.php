@@ -19,6 +19,7 @@ $diaryNo = $_POST['diaryNo'];
     $number = $_POST['number'];
     $date = $_POST['date'];
     $sanction_no = $_POST['sanction_no'];
+    $sanction_date = $_POST['sanction_date'];
 $table = '';
 if($diaryType=='Individual'){
  $table='register';   
@@ -27,7 +28,7 @@ if($diaryType=='Individual'){
 }
 
 
-$sql = "INSERT INTO $table ( `diaryNo`, `diaryType`, `diaryDate`, `rank`, `applicantName`, `idNo`, `pis`, `treatment_by`, `hospitalName`, `type`, `amt_claimed`, `admis_amt`, `send_to`, `number`, `date`, `sanction_no`) VALUES ('$diaryNo','$diaryType','$diaryDate','$rank','$applicantName','$idNo','$pis','$treatment_by','$hospitalName','$type','$amt_claimed','$admis_amt','$send_to','$number','$date','$sanction_no')";
+$sql = "INSERT INTO $table ( `diaryNo`, `diaryType`, `diaryDate`, `rank`, `applicantName`, `idNo`, `pis`, `treatment_by`, `hospitalName`, `type`, `amt_claimed`, `admis_amt`, `send_to`, `number`, `date`, `sanction_no`, `sanction_date`) VALUES ('$diaryNo','$diaryType','$diaryDate','$rank','$applicantName','$idNo','$pis','$treatment_by','$hospitalName','$type','$amt_claimed','$admis_amt','$send_to','$number','$date','$sanction_no', '$sanction_date')";
 
 if(mysqli_query($con, $sql)){
     $last_id = mysqli_insert_id($con);

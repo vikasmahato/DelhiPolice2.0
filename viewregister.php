@@ -98,24 +98,14 @@ $result = mysqli_fetch_array($sql);
 	          <strong>Amount Admissible: </strong>
 	           <input type="number" class="form-control" id="basic-url" name="admis_amt" value="<?php echo $result['admis_amt']; ?>">
 	          </blockquote>
-	          
                 
-                 <blockquote>
-	          <strong>Send To: </strong>
-	           <select class="custom-select form-control" name="send_to">
-                <option value=" " selected>Please select</option>
-                <option value="Account Br.">Account Br.</option>
-                <option value="PHQ">PHQ</option>
-               </select>
+	           <blockquote>
+	          <strong>Send to PHQ: </strong>
+	           <input type="number" class="form-control" id="basic-url" name="phq_number" value="<?php echo $result['number']; ?>">
 	          </blockquote>
                 
-           <!--     <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" type="text" value="<?php echo $result['date']; ?>">
-                </div>
-                    -->
+                
+
                 <blockquote>
 	          <strong>Date: </strong>
                 <input type="text" class="form-control" id="datepicker" name="date" value="<?php echo $result['date']; ?>">
@@ -125,12 +115,16 @@ $result = mysqli_fetch_array($sql);
 	          <strong>Sanction No: </strong>
                 <input type="number" class="form-control" id="basic-url" name="sanction_no" value="<?php echo $result['sanction_no']; ?>">
 	           </blockquote>    
+                  <blockquote>
+                 <label for="date">Sanction Date</label>
+               <input type="text" class="form-control" id="datepicker" name="sanction_date" placeholder="Date" value="<?php echo $result['sanction_date']; ?>">
+                </blockquote>
                     
         	</div>
 		    </div>
 		  </div>
               <input type="hidden"  value="<?php echo $result['s_no']; ?>" name="id" />
-    
+    <input type="hidden"  value="<?php echo $result['diaryType']; ?>" name="diaryType" />
         <div class="row">
         <div class="col-md-6">
         
