@@ -30,6 +30,12 @@ $num = mysqli_num_rows($sql);
     <section class="content-header">
       <h1>
         Dashboard
+ <br>
+          <form method="post" action="print_register.php" >
+              <input type="hidden" name="month" value="<?php echo $month; ?>">
+              <input type="hidden" name="diaryType" value="<?php echo $diaryType; ?>">
+           <button type="submit" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+          </form>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -79,7 +85,7 @@ $num = mysqli_num_rows($sql);
                   <td><?php echo $result['rank']." ".$result['applicantName']." No.".$result['idNo']; ?></td>
                      <td><?php echo $result['treatment_by'] ?></td>
                     <td><?php echo $result['type'] ?></td>
-                <td><a class="btn btn-block btn-default" href="viewregister.php?id=<?php echo $result['s_no']; ?>"><i class="fa fa-eye"></i> View</a></td>
+                <td><a class="btn btn-block btn-default" target="_blank" href="viewregister.php?id=<?php echo $result['s_no']; ?>&type=<?php echo $result['diaryType']; ?>"><i class="fa fa-eye"></i> View</a></td>
                 </tr>
                 <?php 
                     $num--;
