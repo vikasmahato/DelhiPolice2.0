@@ -50,17 +50,7 @@ $sql = mysqli_query($con,$query);
   <!-- Main content -->
   <section class="invoice">
     <!-- title row -->
-    <div class="row">
-      <div class="col-xs-12">
-        <h2 class="page-header">
-          <i class="fa fa-globe"></i>Register
-          <small class="pull-right">Date: </small>
-        </h2>
-      </div>
-      <!-- /.col -->
-      </div>
-
-    <!-- Table row -->
+      <!-- Table row -->
     <div class="row">
       <div class="col-xs-12 table-responsive">
         <table class="table table-striped">
@@ -70,7 +60,8 @@ $sql = mysqli_query($con,$query);
                   <th>Rank/Name/No</th>
                   <th>Treatment Taken By</th>
                     <th>Type</th>
-                  <th>Details</th>
+                  <th>Sancion No</th>
+                    <th>PHQ No</th>
                 </tr>
                 </thead>
           <tbody>
@@ -88,7 +79,8 @@ $sql = mysqli_query($con,$query);
                   <td><?php echo $result['rank']." ".$result['applicantName']." No.".$result['idNo']; ?></td>
                      <td><?php echo $result['treatment_by'] ?></td>
                     <td><?php echo $result['type'] ?></td>
-                <td><a class="btn btn-block btn-default" href="viewregister.php?id=<?php echo $result['s_no']; ?>"><i class="fa fa-eye"></i> View</a></td>
+                <td><?php echo $result['sanction_no']; ?><br><?php echo $result['sanction_date']; ?></td>
+                    <td><?php echo $result['number']; ?><br><?php echo $result['date']; ?></td>
                 </tr>
                 <?php 
                 }
