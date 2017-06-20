@@ -156,6 +156,13 @@ $result = mysqli_fetch_array($sql);
                 <button type="submit" class="btn btn-danger btn-lg btn-block col-md-6" >Remove Objection</button>
               <?php } ?>
                 </form>
+
+                <form action="referral.php" method ="post">
+                <input type="hidden"  value="<?php echo $result['s_no']; ?>" name="id" />
+                <input type="hidden" name="table" value="<?php echo $table; ?>" />
+                <button type="submit" class="btn btn-primary btn-lg btn-block col-md-6" >Referral</button>
+                </form>
+
            <?php
       }
     ?>

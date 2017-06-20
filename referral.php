@@ -1,10 +1,20 @@
 <?php include("includes/header.php"); ?>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       New Referral/Govt. Claim
+       New Referral/Govt. Claim 
+       <?php if(isset($_POST)){
+  $id = $_POST['id'];
+  $table = $_POST['table'];
+  $sql = mysqli_query($con, "SELECT * FROM $table WHERE s_no = $id");
+  $result = mysqli_fetch_array($sql);
+  print_r($_POST);
+ // print_r($result);
+  } ?>
+  
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -46,15 +56,15 @@
                   
               	<div class="form-group">
                   <label for="applicantName">Applicant Name</label>
-                 <input type="text" class="form-control" id="basic-url" name="applicantName" placeholder="Applicant Name" required >
+                 <input type="text" class="form-control" id="basic-url" name="applicantName" placeholder="Applicant Name" value="<?php echo $result['applicantName']; ?>" required >
                 </div>
                 <div class="form-group">
                   <label for="idNo">Belt No</label>
-                  <input type="text" class="form-control" id="basic-url" name="idNo" placeholder="Belt No" required >
+                  <input type="text" class="form-control" id="basic-url" name="idNo" placeholder="Belt No" value="<?php echo $result['idNo']; ?>" required >
                 </div>
                 <div class="form-group">
                   <label for="pis">PIS No</label>
-                  <input type="text" class="form-control" id="basic-url" name="pis" placeholder="PIS No" required >
+                  <input type="text" class="form-control" id="basic-url" name="pis" placeholder="PIS No" value="<?php echo $result['pis']; ?>"required >
                 </div>
                
                 <div class="form-group">
@@ -111,16 +121,16 @@
                   
                       <div class="form-group">
                   <label for="hospitalName">Enter Hospital Name</label>
-                 <input type="text" class="form-control" id="basic-url" name="hospitalName" placeholder="Hospital Name" required >
+                 <input type="text" class="form-control" id="basic-url" name="hospitalName" placeholder="Hospital Name" value="<?php echo $result['hospitalName']; ?>" required >
                 </div>
                   
                   
                   
                       <div class="form-group">
                   <span class="input-group-addon" id="basic-addon3">Enter Diary No:</span>
-            <input type="text" class="form-control" id="diary" name="diaryNo" placeholder="Diary No" required >
+            <input type="text" class="form-control" id="diary" name="diaryNo" placeholder="Diary No" value = "<?php echo $result['diaryNo']; ?>" required >
             <span class="input-group-addon" id="dated">/Genl. Branch/SED dated</span>
-            <input type="text" class="form-control" id="datepicker" name="diaryDate" required >
+            <input type="text" class="form-control" id="datepicker" name="diaryDate" value="<?php echo $result['diaryDate']; ?>" required >
                 </div>
                   
                       <div class="form-group">
